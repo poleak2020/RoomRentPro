@@ -1,0 +1,22 @@
+<!-- frontend/admin/login.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>เข้าสู่ระบบผู้ดูแล</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h2>🔐 เข้าสู่ระบบ (Admin)</h2>
+
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="ชื่อผู้ใช้" required />
+    <input type="password" id="password" placeholder="รหัสผ่าน" required />
+    <button type="submit">เข้าสู่ระบบ</button>
+  </form>
+
+  <p id="error" style="color: red;"></p>
+
+  <script src="login.js"></script>
+</body>
+</html>

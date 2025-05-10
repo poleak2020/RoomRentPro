@@ -1,0 +1,60 @@
+<!-- frontend/admin/rooms.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🏠 จัดการห้องพัก</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h2>🏠 จัดการห้องพัก</h2>
+
+  <!-- เมนูนำทาง -->
+  <nav style="margin-bottom:20px;">
+    <a href="rooms.html">🏠 ห้อง</a> |
+    <a href="tenants.html">👤 ผู้เช่า</a> |
+    <a href="create-bill.html">🧾 ออกบิล</a> |
+    <a href="bills.html">📋 บิลทั้งหมด</a> |
+    <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+  </nav>
+
+  <!-- ฟอร์มเพิ่มหรือแก้ไขห้อง -->
+  <h3>➕ เพิ่ม/แก้ไขห้อง</h3>
+  <form id="addRoomForm">
+    <input type="text" id="roomName" placeholder="ชื่อห้อง" required />
+    <input type="number" id="roomFloor" placeholder="ชั้น" required />
+    <input type="number" id="roomPrice" placeholder="ค่าเช่า" required />
+    <button type="submit">บันทึก</button>
+  </form>
+
+  <hr />
+
+  <!-- ตารางแสดงรายการห้อง -->
+  <h3>📋 รายการห้องทั้งหมด</h3>
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>ชื่อห้อง</th>
+        <th>ชั้น</th>
+        <th>ค่าเช่า</th>
+        <th>สถานะ</th>
+        <th>ผู้เช่า</th>
+        <th>เครื่องมือ</th>
+      </tr>
+    </thead>
+    <tbody id="roomTableBody">
+      <!-- เติมด้วย rooms.js -->
+    </tbody>
+  </table>
+
+  <script src="rooms.js"></script>
+  <script>
+    // ปุ่ม Logout
+    function logout() {
+      localStorage.removeItem('admin_token');
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- frontend/tenant/login.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>เข้าสู่ระบบผู้เช่า</title>
+  <link rel="stylesheet" href="../style.css" />
+
+</head>
+<body>
+  <h2>🔐 เข้าสู่ระบบผู้เช่า</h2>
+  <form id="loginForm">
+    <label>เลขบัตรประชาชน:
+      <input type="text" id="national_id" required />
+    </label><br><br>
+    <label>รหัสผ่าน:
+      <input type="password" id="password" required />
+    </label><br><br>
+    <button type="submit">เข้าสู่ระบบ</button>
+  </form>
+
+  <p id="error" style="color:red;"></p>
+
+  <script src="login.js"></script>
+</body>
+</html>

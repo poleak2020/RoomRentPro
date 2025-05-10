@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>👤 โปรไฟล์ของฉัน</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h2>👤 โปรไฟล์ของฉัน</h2>
+  <nav style="margin-bottom:20px;">
+    <a href="profile.html">👤 โปรไฟล์</a> |
+    <a href="bills.html">🧾 ดูบิลย้อนหลัง</a> |
+    <a href="change_password.html">🔒 เปลี่ยนรหัสผ่าน</a> |
+    <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+  </nav>
+
+  <form id="profileForm">
+    <label>ชื่อ:</label><br />
+    <input type="text" id="name" required /><br /><br />
+
+    <label>เบอร์โทร:</label><br />
+    <input type="text" id="phone" /><br /><br />
+
+    <label>อีเมล:</label><br />
+    <input type="email" id="email" /><br /><br />
+
+    <button type="submit">บันทึกการเปลี่ยนแปลง</button>
+    <p id="msg" style="color: green;"></p>
+  </form>
+
+  <script src="profile.js"></script>
+  <script>
+    function logout() {
+      localStorage.removeItem('tenant_token');
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

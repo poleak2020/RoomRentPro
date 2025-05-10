@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>👤 จัดการผู้เช่า</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h2>👤 จัดการผู้เช่า</h2>
+  <nav style="margin-bottom:20px;">
+    <a href="rooms.html">🏠 ห้อง</a> |
+    <a href="tenants.html">👤 ผู้เช่า</a> |
+    <a href="create-bill.html">🧾 ออกบิล</a> |
+    <a href="bills.html">📋 บิลทั้งหมด</a> |
+    <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+  </nav>
+
+  <h3>➕ เพิ่ม / แก้ไข ผู้เช่า</h3>
+  <form id="tenantForm">
+    <input type="text" id="tName" placeholder="ชื่อผู้เช่า" required />
+    <input type="text" id="tNationalId" placeholder="เลขบัตรประชาชน" required />
+    <input type="text" id="tPhone" placeholder="เบอร์โทร" />
+    <input type="email" id="tEmail" placeholder="อีเมล" />
+    <input type="password" id="tPassword" placeholder="รหัสผ่านเริ่มต้น" required />
+    <button type="submit">บันทึก</button>
+  </form>
+
+  <hr/>
+
+  <h3>📋 รายการผู้เช่า</h3>
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>ชื่อ</th>
+        <th>บัตรประชาชน</th>
+        <th>โทรศัพท์</th>
+        <th>อีเมล</th>
+        <th>สมัครเมื่อ</th>
+        <th>ห้องที่เช่า</th>
+        <th>เครื่องมือ</th>
+      </tr>
+    </thead>
+    <tbody id="tenantTableBody">
+      <!-- เติมด้วย tenants.js -->
+    </tbody>
+  </table>
+
+  <script src="tenants.js"></script>
+  <script>
+  function logout() {
+    localStorage.removeItem('admin_token');
+    window.location.href = 'login.html';
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧾 ออกบิลใหม่ (Admin)</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2>🧾 ออกบิลค่าเช่าใหม่</h2>
+
+  <!-- Navigation -->
+  <nav style="margin-bottom:20px;">
+    <a href="rooms.html">🏠 ห้อง</a> |
+    <a href="tenants.html">👤 ผู้เช่า</a> |
+    <a href="create-bill.html">🧾 ออกบิล</a> |
+    <a href="bills.html">📋 บิลทั้งหมด</a> |
+    <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+  </nav>
+
+  <form id="billForm">
+    <label for="room">เลือกห้อง (มีผู้เช่า และยังไม่มียอดบิลเดือนหน้า):</label><br>
+    <select id="room" required>
+      <option value="">-- เลือกห้อง --</option>
+    </select><br><br>
+    <label for="billing_month">เดือน (YYYY-MM):</label><br>
+    <input type="month" id="billing_month" required><br><br>
+
+    <label for="due_date">วันครบกำหนด:</label><br>
+    <input type="date" id="due_date" required><br><br>
+
+    <button type="submit">สร้างบิล</button>
+  </form>
+  <p id="roomCount" style="font-weight: bold; margin: 10px 0;"></p>
+
+  <p id="msg" style="margin-top:10px;"></p>
+
+  <script src="create-bill.js"></script>
+</body>
+</html>

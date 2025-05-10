@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📋 จัดการบิล</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="toast" style="display:none; position:fixed; bottom:20px; right:20px; background:#4caf50; color:white; padding:10px 20px; border-radius:5px; z-index:9999;"></div>
+    <h2>📋 รายการบิลทั้งหมด</h2>
+    <!-- Navigation -->
+    <nav style="margin-bottom: 20px">
+      <a href="rooms.html">🏠 ห้อง</a> | <a href="tenants.html">👤 ผู้เช่า</a> |
+      <a href="create-bill.html">🧾 ออกบิล</a> |
+      <a href="bills.html">📋 บิลทั้งหมด</a> |
+      <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+    </nav>
+    <div style="margin-bottom: 10px">
+      <label>ค้นหาบิลเดือน/ปี: </label>
+      <input type="month" id="filterMonth" />
+      <button onclick="filterBills()">ค้นหา</button>
+      <button onclick="resetFilter()">🔄 รีเซ็ต</button>
+    </div>
+    <button onclick="exportCSV()">📤 ดาวน์โหลด CSV</button>
+    <input type="text" id="searchInput" placeholder="🔍 ค้นหา รหัสบิลหรือชื่อผู้เช่า" oninput="searchBills()" />
+    <table border="1" width="100%">
+      <div id="totalAmount" style="margin-top: 10px; font-weight: bold;"></div>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ลำดับ</th>
+          <th>เดือนที่ชำระ</th>
+          <th>ห้อง</th>
+          <th>ผู้เช่า</th>
+          <th>จำนวน</th>
+          <th>สถานะ</th>
+          <th>วันครบกำหนด</th>
+          <th>จ่ายเมื่อ</th>
+          <th>เครื่องมือ</th>
+          <th>ใบเสร็จ</th>
+        </tr>
+      </thead>
+      <tbody id="billTableBody">
+        <!-- เติมด้วย bills.js -->
+      </tbody>
+    </table>
+    <div id="paginationControls" style="margin-top: 20px; text-align: center;">
+      <button onclick="prevPage()">⬅️ ก่อนหน้า</button>
+      <span id="currentPageDisplay">หน้า 1</span>
+      <button onclick="nextPage()">➡️ ถัดไป</button>
+    </div>
+    
+
+    <script src="bills.js"></script>
+  </body>
+</html>

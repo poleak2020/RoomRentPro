@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧾 บิลย้อนหลัง</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <h2>🧾 รายการใบแจ้งหนี้ของคุณ</h2>
+  <nav style="margin-bottom: 20px;">
+    <a href="profile.html">👤 โปรไฟล์</a> |
+    <a href="bills.html">🧾 ดูบิลย้อนหลัง</a> |
+    <a href="change_password.html">🔒 เปลี่ยนรหัสผ่าน</a> |
+    <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+  </nav>
+
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>เดือน</th>
+        <th>ห้อง</th>
+        <th>จำนวน</th>
+        <th>สถานะ</th>
+        <th>วันครบกำหนด</th>
+        <th>เครื่องมือ</th>
+      </tr>
+    </thead>
+    <tbody id="billTableBody">
+      <!-- JS เติมข้อมูลที่นี่ -->
+    </tbody>
+  </table>
+
+  <script src="bills.js"></script>
+</body>
+</html>
